@@ -14,23 +14,23 @@ export default function App() {
 
   const onLeaveFeedback = key => {
     switch (key) {
-      case 'good1': {
+      case 'good': {
         setGood(prev => prev + 1);
         break;
       }
 
-      case 'neutral1': {
+      case 'neutral': {
         setNeutral(prev => prev + 1);
         break;
       }
 
-      case 'bad1': {
+      case 'bad': {
         setBad(prev => prev + 1);
         break;
       }
 
       default:
-        return console.error('Wrong option name');
+        throw new Error(`Unsuported option name ${key}`);
     }
   };
 
